@@ -1,0 +1,161 @@
+1.User Collection
+
+db.user.insertMany([
+  {
+    "user_id": "U001",
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "attendance": [
+      "2020-10-01", "2020-10-02", "2020-10-05", "2020-10-10"
+    ],
+    "tasks_submitted": ["T001", "T002"],
+    "codekata_solved": ["P001", "P003"]
+  },
+  {
+    "user_id": "U002",
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "attendance": [
+      "2020-10-01", "2020-10-03", "2020-10-07", "2020-10-15"
+    ],
+    "tasks_submitted": ["T003"],
+    "codekata_solved": ["P002"]
+  }
+]
+)
+
+2.Codekata Collection
+
+db.codekata.insertMany([
+  {
+    "problem_id": "P001",
+    "problem_title": "Problem 1",
+    "difficulty_level": "Easy",
+    "solved_by": ["U001", "U002"],
+    "date_solved": ["2020-10-02", "2020-10-05"]
+  },
+  {
+    "problem_id": "P002",
+    "problem_title": "Problem 2",
+    "difficulty_level": "Medium",
+    "solved_by": ["U002"],
+    "date_solved": ["2020-10-06"]
+  },
+  {
+    "problem_id": "P003",
+    "problem_title": "Problem 3",
+    "difficulty_level": "Hard",
+    "solved_by": ["U001"],
+    "date_solved": ["2020-10-04"]
+  }
+]
+)
+
+3.Attendance Collection
+
+db.attendance.insertMany([
+  {
+    "user_id": "U001",
+    "date": "2020-10-01",
+    "status": "present"
+  },
+  {
+    "user_id": "U001",
+    "date": "2020-11-05",
+    "status": "absent"
+  },
+  {
+    "user_id": "U002",
+    "date": "2020-10-03",
+    "status": "present"
+  },
+  {
+    "user_id": "U002",
+    "date": "2020-10-07",
+    "status": "present"
+  }
+]
+)
+
+4. Topic Collection
+
+db.topic.insertMany([
+  {
+    "topic_id": "T001",
+    "topic_title": "Introduction to JavaScript",
+    "date_covered": "2020-10-01",
+    "instructor_id": "M001"
+  },
+  {
+    "topic_id": "T002",
+    "topic_title": "Functions and Closures",
+    "date_covered": "2020-10-03",
+    "instructor_id": "M002"
+  }
+]
+)
+
+5. Task Collection
+
+db.task.insertMany([
+  {
+    "task_id": "T001",
+    "task_title": "Task 1: JavaScript Basics",
+    "due_date": "2020-10-05",
+    "submitted_by": ["U001"],
+    "status": "completed"
+  },
+  {
+    "task_id": "T002",
+    "task_title": "Task 2: Functions",
+    "due_date": "2020-10-10",
+    "submitted_by": ["U001"],
+    "status": "completed"
+  },
+  {
+    "task_id": "T003",
+    "task_title": "Task 3: Array Manipulations",
+    "due_date": "2020-10-20",
+    "submitted_by": ["U002"],
+    "status": "pending"
+  }
+]
+)
+
+6. company_drives Collection
+
+db.company_drives.insertMany([
+  {
+    "drive_id": "D001",
+    "company_name": "TechCorp",
+    "start_date": "2020-10-15",
+    "end_date": "2020-10-17",
+    "participants": ["U001", "U002"]
+  },
+  {
+    "drive_id": "D002",
+    "company_name": "InnoTech",
+    "start_date": "2020-10-20",
+    "end_date": "2020-10-22",
+    "participants": ["U001"]
+  }
+]
+)
+
+7. Mentor Collection
+
+db.mentors.insertMany([
+  {
+    "mentor_id": "M001",
+    "mentor_name": "Alice Brown",
+    "mentees_count": 12,
+    "mentees": ["U001", "U002"]
+  },
+  {
+    "mentor_id": "M002",
+    "mentor_name": "Bob White",
+    "mentees_count": 18,
+    "mentees": ["U001", "U002", "U003", "U004"]
+  }
+]
+)
