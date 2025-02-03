@@ -1,0 +1,67 @@
+##Database Collection Design
+users:
+
+user_id (unique)
+name
+email
+attendance (array of dates the user attended)
+tasks_submitted (array of task ids that the user has submitted)
+codekata_solved (array of problem ids the user solved)
+
+
+
+
+codekata:
+
+problem_id (unique)
+problem_title
+difficulty_level
+solved_by (array of user_ids who solved the problem)
+date_solved (array of dates when users solved the problem)
+
+
+
+
+attendance:
+
+user_id
+date
+status (e.g., "present", "absent")
+
+
+
+
+topics:
+
+topic_id
+topic_title
+date_covered
+instructor_id
+
+
+
+
+tasks:
+
+task_id
+task_title
+due_date
+submitted_by (array of user_ids who submitted the task)
+status (e.g., "completed", "pending")
+
+
+
+
+company_drives:
+
+drive_id
+company_name
+start_date
+end_date
+participants (array of user_ids who participated)
+mentors:
+
+mentor_id
+mentor_name
+mentees_count
+mentees (array of user_ids)
